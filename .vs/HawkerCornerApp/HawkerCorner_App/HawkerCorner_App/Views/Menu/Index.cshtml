@@ -1,0 +1,33 @@
+﻿@model IEnumerable<HawkerCorner_App.Models.HawkerStore>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align:center;">
+    "One-stop platform,
+    for your indecisiveness!​"
+</h1>
+<br />
+<br />
+
+<div class="card">
+    <div class="container">
+        <div class="scrolling-wrapper">
+            @foreach (var item in Model)
+            {
+            <div class="card">
+                <img src="~/images/Picture1.png"
+                     style="width:200px" /> <br />
+
+                <a asp-action="ViewStoreDetails" asp-controller="Menu"
+                   asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID> @item.Name.ToString() </a>
+
+                @item.AVGRating.ToString()
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+<br />

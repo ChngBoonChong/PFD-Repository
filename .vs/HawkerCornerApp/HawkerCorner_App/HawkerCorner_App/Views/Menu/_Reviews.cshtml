@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HawkerCorner_App.Models.HawkerStoreDetailsViewModel>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CentreID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CentreName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoreID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AVGRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StoreName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CentreID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CentreName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoreID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AVGRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoreName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
