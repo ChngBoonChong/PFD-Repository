@@ -153,5 +153,33 @@ namespace HawkerCorner_App.DAL
             //Close the database connection
             conn.Close();
         }
+
+        public void AddFoodOrder(FoodOrder fo)
+        {
+            //Create a SqlCommand object from connection object
+            SqlCommand cmd = conn.CreateCommand();
+
+            //Specify an UPDATE SQL statement
+            cmd.CommandText = @"INSERT INTO FoodOrder
+                                VALUES (@OrderID, @UserID, @DelivererID, @StoreID, @Address, @OrderList, @Date, @OrderConfirm, @OrderComplete)";
+            //Define the parameters used in SQL statement, value for each parameter
+            //is retrieved from respective class's property.
+            cmd.Parameters.AddWithValue("@OrderID", fo.OrderID);
+            cmd.Parameters.AddWithValue("@UserID", fo.UserID);
+            cmd.Parameters.AddWithValue("@DelivererID", DBNull.Value);
+            cmd.Parameters.AddWithValue("@StoreID", fo.StoreID);
+            cmd.Parameters.AddWithValue("@Address", fo.Address);
+            cmd.Parameters.AddWithValue("@OrderList", fo.OrderList);
+            cmd.Parameters.AddWithValue("@Date", fo.Date);
+            cmd.Parameters.AddWithValue("@OrderConfirm", fo.OrderConfirm);
+            cmd.Parameters.AddWithValue("@OrderComplete", fo.OrderComplete);
+
+            //Open a database connection
+            conn.Open();
+            //ExecuteNonQuery is used for UPDATE and DELETE
+            cmd.ExecuteNonQuery();
+            //Close the database connection
+            conn.Close();
+        }
     }
 }

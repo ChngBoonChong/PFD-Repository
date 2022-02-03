@@ -13,6 +13,7 @@ namespace HawkerCorner_App.Controllers
         private HawkerStoreDAL storeContext = new HawkerStoreDAL();
         private HawkerCentreDAL centreContext = new HawkerCentreDAL();
         private ReviewDAL reviewContext = new ReviewDAL();
+        private FoodOrderDAL foodOrderContext = new FoodOrderDAL();
 
         public IActionResult Index()
         {
@@ -54,10 +55,30 @@ namespace HawkerCorner_App.Controllers
         //Order Start
         public ActionResult StartOrder()
         {
-            return View("");
+            return View("OrderForm");
         }
 
+        [HttpPost]
+        public ActionResult OrderForm(Models.FoodOrder formData)
+        {
+            FoodOrder fo = new FoodOrder();
 
+            //Do something with formData
+            fo.OrderID = "O001";  // !!!! CANNOT HARDCODE
+            fo.UserID = "U001";   // !!!! CANNOT HARDCODE
+            fo.DelivererID = null;
+            fo.StoreID = "S001";   // !!!! CANNOT HARDCODE
+            fo.Address = formData.Address;
+            fo.OrderList = formData.OrderList;
+            fo.Date = DateTime.Now;
+            fo.OrderConfirm = "Unconfirmed";
+            fo.OrderComplete = "Incomplete";
+
+            //Run DAL to add
+            foodOrderContext.AddFoodOrder(fo);
+
+            return View(); // Go to payment screen(?)
+        }
 
         private List<HawkerStore> GetAllStores()
         {
