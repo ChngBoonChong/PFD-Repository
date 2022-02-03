@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Repo\\PFD\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\HawkerCorner_App.csproj": {}
+    "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Latest Repo\\.vs\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\HawkerCorner_App.csproj": {}
   },
   "projects": {
-    "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Repo\\PFD\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\HawkerCorner_App.csproj": {
+    "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Latest Repo\\.vs\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\HawkerCorner_App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Repo\\PFD\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\HawkerCorner_App.csproj",
+        "projectUniqueName": "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Latest Repo\\.vs\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\HawkerCorner_App.csproj",
         "projectName": "HawkerCorner_App",
-        "projectPath": "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Repo\\PFD\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\HawkerCorner_App.csproj",
+        "projectPath": "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Latest Repo\\.vs\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\HawkerCorner_App.csproj",
         "packagesPath": "C:\\Users\\b00nc\\.nuget\\packages\\",
-        "outputPath": "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Repo\\PFD\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\obj\\",
+        "outputPath": "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Latest Repo\\.vs\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\b00nc\\AppData\\Roaming\\NuGet\\NuGet.Config",

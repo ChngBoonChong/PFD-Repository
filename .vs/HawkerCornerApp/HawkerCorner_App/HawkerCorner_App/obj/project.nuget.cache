@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ScXlGBp4TUGazWUYkRyqeWU2YtgZ8WdYPwVYTN+oZu90mkkF5NUUfZn2YBByyXKsRnS5h7P7zOavdyNhP2t/iA==",
+  "dgSpecHash": "d9671ezr3XZ7UdQPsSdlNZ8Gq3AKWFBGnhKYyVcueZWkUi4h+TY1US/ywqgmN34molEVc6S6uaj9oa10bq7WvA==",
   "success": true,
-  "projectFilePath": "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Repo\\PFD\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\HawkerCorner_App.csproj",
+  "projectFilePath": "E:\\1) Ngee Ann Poly\\Year 2 Sem 2\\Portfolio Development\\Latest Repo\\.vs\\HawkerCornerApp\\HawkerCorner_App\\HawkerCorner_App\\HawkerCorner_App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\b00nc\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\b00nc\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
