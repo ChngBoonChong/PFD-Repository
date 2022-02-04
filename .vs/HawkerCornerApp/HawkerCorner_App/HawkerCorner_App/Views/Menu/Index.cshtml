@@ -15,45 +15,14 @@
     <style>
         body {
             margin-bottom: 0;
-            background-color: rgba(255,255,255,.0);
-        }
-
-        .background-image {
             background-image: url('/images/Picture1.png');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
             position: absolute;
-            height: 100%;
             width: 100%;
             right: 0%;
-        }
-
-        .background-image2 {
-            background-image: url('/images/Picture1.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            right: 0%;
-            top: 800px;
-        }
-
-        .background-image3 {
-            background-image: url('/images/Picture1.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            position: absolute;
-            height: 50%;
-            width: 100%;
-            right: 0%;
-            top: 1575px;
         }
 
         .header-text {
@@ -69,9 +38,10 @@
 
         .menu-container {
             background: none;
-            bottom: 100px;
-            padding-right: 200px;
-            padding-left: 200px;
+            top: 1350px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .card {
@@ -101,87 +71,75 @@
 </head>
 
 <body>
-    <div class="background-image">
-        <div class="header-text">
-            "One-stop platform, <br />
-            for your indecisiveness!​"
-        </div>
+    <div class="header-text">
+        "One-stop platform, <br />
+        for your indecisiveness!​"
     </div>
+    <div class="menu-container">
+        <div class="card">
+            <h2 style="text-align:center;">
+                Star Buy
+            </h2>
+            <div class="scrolling-wrapper">
+                @foreach (var item in Model)
+                {
+                    <div class="card">
+                        <a asp-action="ViewStoreDetails" asp-controller="Menu"
+                           asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID><img src="~/images/Picture1.png" style="width:250px" /></a><br />
 
-    <div class="background-image2">
-        <div class="menu-container">
-            <div class="card">
-                <h2 style="text-align:center;">
-                    Star Buy
-                </h2>
-                <div class="scrolling-wrapper">
-                    @foreach (var item in Model)
-                    {
-                        <div class="card">
-                            <a asp-action="ViewStoreDetails" asp-controller="Menu"
-                               asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID><img src="~/images/Picture1.png" style="width:250px" /></a><br />
+                        <a asp-action="ViewStoreDetails" asp-controller="Menu"
+                           asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID> @item.Name.ToString() </a>
 
-                            <a asp-action="ViewStoreDetails" asp-controller="Menu"
-                               asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID> @item.Name.ToString() </a>
-
-                            <br /> Rating: @item.AVGRating.ToString()
-                        </div>
-                    }
-                </div>
+                        <br /> Rating: @item.AVGRating.ToString()
+                    </div>
+                }
             </div>
-
-            <br />
-            <br />
-
-            <div class="card">
-                <h2 style="text-align:center;">
-                    Discover Near You
-                </h2>
-                <div class="scrolling-wrapper">
-                    @foreach (var item in Model)
-                    {
-                        <div class="card">
-                            <a asp-action="ViewStoreDetails" asp-controller="Menu"
-                               asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID><img src="~/images/selection-of-chinese-food-that-may-cause-chinese-restaurant-syndrome.jpg" style="width:250px" /></a><br />
-
-                            <a asp-action="ViewStoreDetails" asp-controller="Menu"
-                               asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID> @item.Name.ToString() </a>
-
-                            <br /> Rating: @item.AVGRating.ToString()
-                        </div>
-                    }
-                </div>
-            </div>
-
-            <br />
-            <br />
         </div>
-    </div>
 
-    <div class="background-image3">
-        <div class="menu-container">
-            <div class="card">
-                <h2 style="text-align:center;">
-                    Recommended Near You
-                </h2>
-                <div class="scrolling-wrapper">
-                    @foreach (var item in Model)
-                    {
-                        <div class="card">
-                            <a asp-action="ViewStoreDetails" asp-controller="Menu"
-                               asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID><img src="~/images/hawker-food-hero-image-image-credit-visit-singapore-1600x900.jpg" style="width:250px" /></a><br />
+        <br />
+        <br />
 
-                            <a asp-action="ViewStoreDetails" asp-controller="Menu"
-                               asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID> @item.Name.ToString() </a>
+        <div class="card">
+            <h2 style="text-align:center;">
+                Discover Near You
+            </h2>
+            <div class="scrolling-wrapper">
+                @foreach (var item in Model)
+                {
+                    <div class="card">
+                        <a asp-action="ViewStoreDetails" asp-controller="Menu"
+                           asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID><img src="~/images/selection-of-chinese-food-that-may-cause-chinese-restaurant-syndrome.jpg" style="width:250px" /></a><br />
 
-                            <br /> Rating: @item.AVGRating.ToString()
-                        </div>
-                    }
-                </div>
+                        <a asp-action="ViewStoreDetails" asp-controller="Menu"
+                           asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID> @item.Name.ToString() </a>
+
+                        <br /> Rating: @item.AVGRating.ToString()
+                    </div>
+                }
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <div class="card">
+            <h2 style="text-align:center;">
+                Recommended Near You
+            </h2>
+            <div class="scrolling-wrapper">
+                @foreach (var item in Model)
+                {
+                    <div class="card">
+                        <a asp-action="ViewStoreDetails" asp-controller="Menu"
+                           asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID><img src="~/images/hawker-food-hero-image-image-credit-visit-singapore-1600x900.jpg" style="width:250px" /></a><br />
+
+                        <a asp-action="ViewStoreDetails" asp-controller="Menu"
+                           asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID> @item.Name.ToString() </a>
+
+                        <br /> Rating: @item.AVGRating.ToString()
+                    </div>
+                }
             </div>
         </div>
     </div>
-
-
 </body>
 </html>

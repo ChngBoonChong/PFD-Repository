@@ -36,7 +36,7 @@ namespace HawkerCorner_App.Controllers
         public ActionResult MyOrders()
         {
             //Get all orders from DAL
-            List<FoodOrder> foodOrderList = foodOrderContext.GetAllCustomerOwnFoodOrder("U001"); //HttpContext.Session.GetString("LoginID");
+            List<FoodOrder> foodOrderList = foodOrderContext.GetAllCustomerOwnFoodOrder(HttpContext.Session.GetString("LoginID")); //HttpContext.Session.GetString("LoginID");
             
             return View("MyOrders", foodOrderList);
         }
@@ -81,7 +81,7 @@ namespace HawkerCorner_App.Controllers
 
             //Do something with formData
             fo.OrderID = Convert.ToString(uniqueOrderID);
-            fo.UserID = "U001";//HttpContext.Session.GetString("LoginID");
+            fo.UserID = HttpContext.Session.GetString("LoginID");//HttpContext.Session.GetString("LoginID");
             fo.DelivererID = null;
             fo.StoreID = HttpContext.Session.GetString("SelectedStore");
             fo.Address = formData.Address;
