@@ -238,14 +238,14 @@ namespace HawkerCorner_App.DAL
         public int Update(Users user)
         {
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"UPDATE Users SET UserName = @name,
-                                Salutation = @sal
+            cmd.CommandText = @"UPDATE Users SET Name = @name,
+                                Status = @role
                                 WHERE UserID = @userID";
 
             //Define the parameters used in SQL statement, value for each parameter
             //is retrieved from respective class's property.
             cmd.Parameters.AddWithValue("@name", user.UserName);
-            cmd.Parameters.AddWithValue("@sal", user.Salutation);
+            cmd.Parameters.AddWithValue("@role", user.Role);
             cmd.Parameters.AddWithValue("@userID", user.UserID);
 
             //Open a database connection
