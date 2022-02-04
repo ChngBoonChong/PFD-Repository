@@ -81,6 +81,18 @@ namespace HawkerCorner_App.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult ToDel()
+        {
+            HttpContext.Session.SetString("Role", "Deliverer");
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult ToUser()
+        {
+            HttpContext.Session.SetString("Role", "Customer");
+            return RedirectToAction("Index");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
