@@ -110,11 +110,13 @@ namespace HawkerCorner_App.Controllers
             foodOrderContext.AddFoodOrder(fo);
 
             int hcCut = 1;
-            int totalFinalAmount = totalNettAmount + hcCut;
+            int deliveryCut = 4;
+            int totalFinalAmount = totalNettAmount + hcCut + deliveryCut;
 
             // Send data to viewbag for view
             ViewBag.CutAmount = hcCut;
             ViewBag.NettAmount = totalNettAmount;
+            ViewBag.DeliveryAmount = deliveryCut;
             ViewBag.PriceAmount = totalFinalAmount;
 
             // Remove the storeID so you can continue ordering more
