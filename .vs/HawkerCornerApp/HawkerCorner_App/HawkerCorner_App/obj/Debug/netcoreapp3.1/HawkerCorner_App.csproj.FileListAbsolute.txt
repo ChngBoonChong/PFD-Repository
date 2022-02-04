@@ -730,7 +730,6 @@ D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_A
 D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\HawkerCorner_App.TagHelpers.input.cache
 D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\HawkerCorner_App.TagHelpers.output.cache
 D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\HawkerCorner_App.RazorCoreGenerate.cache
-D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Deliverer\DelivererIndex.cshtml.g.cs
 D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Deliverer\FoodDeliveryDetails.cshtml.g.cs
 D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Home\LoginView.cshtml.g.cs
@@ -757,3 +756,4 @@ D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_A
 D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\HawkerCorner_App.pdb
 D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\HawkerCorner_App.genruntimeconfig.cache
 D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DeliverBar.cshtml.g.cs
+D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Deliverer\DelivererIndex.cshtml.g.cs
