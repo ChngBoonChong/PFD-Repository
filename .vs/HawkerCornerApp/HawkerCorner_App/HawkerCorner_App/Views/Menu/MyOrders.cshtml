@@ -1,0 +1,76 @@
+﻿@model IEnumerable<HawkerCorner_App.Models.FoodOrder>
+
+@{
+    ViewData["Title"] = "MyOrders";
+}
+
+<h1>MyOrders</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 7%; text-align: center;">
+                @Html.DisplayNameFor(model => model.OrderID)
+            </th>
+            <th style="width: 7%; text-align: center;">
+                @Html.DisplayNameFor(model => model.UserID)
+            </th>
+            <th style="width: 10%; text-align: center;">
+                @Html.DisplayNameFor(model => model.DelivererID)
+            </th>
+            <th style="width: 7%; text-align: center;">
+                @Html.DisplayNameFor(model => model.StoreID)
+            </th>
+            <th style="width: 30%; text-align: left;">
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th style="width: 20%; text-align: left;">
+                @Html.DisplayNameFor(model => model.OrderList)
+            </th>
+            <th style="width: 15%; text-align: left;">
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th style="width: 15%; text-align: center;">
+                @Html.DisplayNameFor(model => model.OrderConfirm)
+            </th>
+            <th style="width: 15%; text-align: center;">
+                @Html.DisplayNameFor(model => model.OrderComplete)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DelivererID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StoreID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderList)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderConfirm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderComplete)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

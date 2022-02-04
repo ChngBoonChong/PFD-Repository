@@ -33,6 +33,13 @@ namespace HawkerCorner_App.Controllers
         {
             return View();
         }
+        public ActionResult MyOrders()
+        {
+            //Get all orders from DAL
+            List<FoodOrder> foodOrderList = foodOrderContext.GetAllCustomerOwnFoodOrder("U001"); //HttpContext.Session.GetString("LoginID");
+            
+            return View("MyOrders", foodOrderList);
+        }
 
         // GET: MenuController/Details/5
         public ActionResult ViewStoreDetails(string storeID, string centreID)
@@ -73,10 +80,10 @@ namespace HawkerCorner_App.Controllers
 
 
             //Do something with formData
-            fo.OrderID = Convert.ToString(uniqueOrderID);  // !!!! CANNOT HARDCODE
+            fo.OrderID = Convert.ToString(uniqueOrderID);
             fo.UserID = "U001";//HttpContext.Session.GetString("LoginID");
             fo.DelivererID = null;
-            fo.StoreID = HttpContext.Session.GetString("SelectedStore");   // !!!! CANNOT HARDCODE
+            fo.StoreID = HttpContext.Session.GetString("SelectedStore");
             fo.Address = formData.Address;
             fo.OrderList = formData.OrderList;
             fo.Date = DateTime.Now;
@@ -110,10 +117,19 @@ namespace HawkerCorner_App.Controllers
             ViewBag.NettAmount = totalNettAmount;
             ViewBag.PriceAmount = totalFinalAmount;
 
+            // Remove the storeID so you can continue ordering more
+            HttpContext.Session.Remove("SelectedStore");
+
             return View("MakePayment"); //Go to payment
         }
 
-        private List<HawkerStore> GetAllStores()
+        public ActionResult OrderAwait()
+        {
+            return View("OrderAwait");
+        }
+
+
+            private List<HawkerStore> GetAllStores()
         {
             // Get a list of branches from database
             List<HawkerStore> storeList = storeContext.GetAllStores();

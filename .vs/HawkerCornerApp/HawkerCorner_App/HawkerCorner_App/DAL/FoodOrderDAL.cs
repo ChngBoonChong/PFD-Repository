@@ -68,6 +68,50 @@ namespace HawkerCorner_App.DAL
             return foodOrderList;
         }
 
+        // GetAllCustomerOwnFoodOrder
+        public List<FoodOrder> GetAllCustomerOwnFoodOrder(string userID)
+        {
+
+            //Create a SqlCommand object from connection object
+            SqlCommand cmd = conn.CreateCommand();
+            //Specify the SELECT SQL statement
+            cmd.CommandText = @"SELECT * FROM FoodOrder WHERE UserID = @UserID ORDER BY OrderID DESC
+";
+            cmd.Parameters.AddWithValue("@UserID", userID);
+
+            //Open a database connection
+            conn.Open();
+            //Execute the SELECT SQL through a DataReader
+            SqlDataReader reader = cmd.ExecuteReader();
+            //Read all records until the end, save data into a food order list
+            List<FoodOrder> foodOrderList = new List<FoodOrder>();
+
+            while (reader.Read())
+            {
+                foodOrderList.Add(
+                new FoodOrder
+                {
+                    OrderID = reader.GetString(0),
+                    UserID = reader.GetString(1),
+                    DelivererID = !reader.IsDBNull(2) ? reader.GetString(2) : null,
+                    StoreID = reader.GetString(3),
+                    Address = reader.GetString(4),
+                    OrderList = reader.GetString(5),
+                    Date = reader.GetDateTime(6),
+                    OrderConfirm = reader.GetString(7),
+                    OrderComplete = reader.GetString(8),
+                }
+                );
+            }
+            //Close DataReader
+            reader.Close();
+            //Close the database connection
+            conn.Close();
+
+            return foodOrderList;
+        }
+
+
         // Get specified FoodOrder and Change Status
         public FoodOrder ChangeFoodOrderStatus(string orderID, string loginID)
         {

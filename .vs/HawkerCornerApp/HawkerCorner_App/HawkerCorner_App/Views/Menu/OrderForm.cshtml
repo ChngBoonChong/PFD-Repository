@@ -7,8 +7,8 @@
 
 @using (Html.BeginForm("OrderForm", "Menu", FormMethod.Post))
 {
-    @Html.TextBoxFor(m => m.Address)
-    @Html.TextBoxFor(model => model.OrderList)
+    @Html.TextBoxFor(m => m.Address)<br />
+    @Html.TextBoxFor(model => model.OrderList)<br />
 
-    <input type="submit" value="Submit strongly type synchronous form" />
+    <input type="submit" value="Submit Order" />
 }

@@ -10,3 +10,24 @@ Nett Total Amount: $@ViewBag.NettAmount
 HawkerCorner Cut: $@ViewBag.CutAmount
 
 Total Amount Due: $@ViewBag.PriceAmount
+
+
+<form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br>
+
+    <label for="cnum">Credit Card Number:</label><br>
+    <input type="text" id="cnum" name="cnum"><br>
+
+    <label for="spin">Security PIN (3 Digits on Card Back):</label><br>
+    <input type="text" id="spin" name="spin"><br>
+
+    <input type="submit" value="Submit" asp-action="OrderAwait">
+</form>
+
+<br>
+
+<img src="~/images/qr code example.png" style="width:300px" />

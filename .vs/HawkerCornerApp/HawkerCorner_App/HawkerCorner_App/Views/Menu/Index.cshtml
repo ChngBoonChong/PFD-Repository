@@ -16,16 +16,19 @@
         <div class="scrolling-wrapper">
             @foreach (var item in Model)
             {
-            <div class="card">
-                <img src="~/images/Picture1.png"
-                     style="width:200px" /> <br />
+                <div class="card">
+                    <img src="~/images/Picture1.png"
+                         style="width:200px" /> <br />
 
-                <a asp-action="ViewStoreDetails" asp-controller="Menu"
-                   asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID> @item.Name.ToString() </a>
+                    <a asp-action="ViewStoreDetails" asp-controller="Menu"
+                       asp-route-storeId="@item.StoreID" asp-route-centreId=@item.CentreID> @item.Name.ToString() </a>
 
-                @item.AVGRating.ToString()
-            </div>
+                    @item.AVGRating.ToString()
+                </div>
             }
+            <br />
+            <a asp-action="MyOrders" asp-controller="Menu"> My Orders </a>
+
         </div>
     </div>
 </div>

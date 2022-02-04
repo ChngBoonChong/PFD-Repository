@@ -759,3 +759,5 @@ D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_A
 D:\Y2 Sem 2\Portfolio DEV\code\PFD-Repository\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Deliverer\DelivererIndex.cshtml.g.cs
 E:\1) Ngee Ann Poly\Year 2 Sem 2\Portfolio Development\Latest Repo\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DeliverBar.cshtml.g.cs
 E:\1) Ngee Ann Poly\Year 2 Sem 2\Portfolio Development\Latest Repo\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Menu\MakePayment.cshtml.g.cs
+E:\1) Ngee Ann Poly\Year 2 Sem 2\Portfolio Development\Latest Repo\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Menu\OrderAwait.cshtml.g.cs
+E:\1) Ngee Ann Poly\Year 2 Sem 2\Portfolio Development\Latest Repo\.vs\HawkerCornerApp\HawkerCorner_App\HawkerCorner_App\obj\Debug\netcoreapp3.1\Razor\Views\Menu\MyOrders.cshtml.g.cs
