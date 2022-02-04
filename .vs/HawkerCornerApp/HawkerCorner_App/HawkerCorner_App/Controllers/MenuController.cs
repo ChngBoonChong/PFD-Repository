@@ -99,7 +99,7 @@ namespace HawkerCorner_App.Controllers
             foreach (string item in rawOrderItems)
             {
                 Random rnd = new Random();
-                int price = rnd.Next(1, 4);
+                int price = rnd.Next(3, 5);
 
                 totalNettAmount = totalNettAmount + price;
                 Console.WriteLine(totalNettAmount);
