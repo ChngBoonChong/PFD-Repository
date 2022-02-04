@@ -82,14 +82,35 @@ namespace HawkerCorner_App.Controllers
             fo.Date = DateTime.Now;
             fo.OrderConfirm = "Unconfirmed";
             fo.OrderComplete = "Incomplete";
+            Console.WriteLine("This is a test");
+
+            var rawOrderList = fo.OrderList;
+            var rawOrderItems = rawOrderList.Split(',');
+            Console.WriteLine(rawOrderItems);
+
+            int totalNettAmount = 0;
+            foreach (string item in rawOrderItems)
+            {
+                Random rnd = new Random();
+                int price = rnd.Next(1, 4);
+
+                totalNettAmount = totalNettAmount + price;
+                Console.WriteLine(totalNettAmount);
+            }
+            Console.WriteLine(totalNettAmount);
 
             //Run DAL to add
             foodOrderContext.AddFoodOrder(fo);
 
-       
+            int hcCut = 1;
+            int totalFinalAmount = totalNettAmount + hcCut;
 
+            // Send data to viewbag for view
+            ViewBag.CutAmount = hcCut;
+            ViewBag.NettAmount = totalNettAmount;
+            ViewBag.PriceAmount = totalFinalAmount;
 
-            return View(); // Go to payment screen(?)
+            return View("MakePayment"); //Go to payment
         }
 
         private List<HawkerStore> GetAllStores()
