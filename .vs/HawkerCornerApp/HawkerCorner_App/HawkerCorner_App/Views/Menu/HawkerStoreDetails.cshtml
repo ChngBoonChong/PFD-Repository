@@ -4,57 +4,83 @@
     ViewData["Title"] = "HawkerStoreDetails";
 }
 
-<h1>HawkerStoreDetails</h1>
+<style>
+    .bg {
+        position: absolute;
+        height: 93%;
+        width: 82%;
+        right: 0%;
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100% 
+    }
+    .front {
+        font-family: Montserrat;
+        color: black;
+    }
+    .button {
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        display: inline-block;
+        font-size: 35px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        border: 3px solid black;
+    }
+</style>
 
-<div>
-    <h4>HawkerStoreDetailsViewModel</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CentreID)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CentreID)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CentreName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CentreName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StoreID)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StoreID)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.AVGRating)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.AVGRating)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StoreName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StoreName)
-        </dd>
-        @*<dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ReviewList)
-        </dd>*@
-    </dl>
-    @*<dl>
-        <partial name="~/Views/Menu/_Reviews.cshtml" />
-    </dl>*@
-</div>
-<div>
-    @Html.ActionLink("Order", "StartOrder", new { Model.StoreID }) |
-    <a asp-action="Index">Back to Store Listings</a>
-</div>
+
+<body>
+    <img style="z-index:-5;" class="bg" src="/images/general bg.png">
+    <div class="front">
+        <h1>
+            <span style="background-color: #FFFF00"> @Html.DisplayFor(model => model.StoreName) </span>
+        </h1>
+
+        <div>
+            <h4><span style="background-color: #FFFF00">@Html.DisplayFor(model => model.CentreName)</span></h4>
+            <h5><span style="background-color: #FFFF00">@Html.DisplayFor(model => model.Address)</span></h5>
+
+            <h5>Average Rating: @Html.DisplayFor(model => model.AVGRating)/5</h5>
+
+            <hr />
+            <img src="~/images/Hawkercentre bg.jpg" style="width:500px" />
+            <img src="~/images/Menu Sample.jpg" style="width:500px" />
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CentreID)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CentreID)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.StoreID)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.StoreID)
+                </dd>
+                @*<dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ReviewList)
+                </dd>*@
+            </dl>
+            @*<dl>
+                <partial name="~/Views/Menu/_Reviews.cshtml" />
+            </dl>*@
+        </div>
+
+        <div class="center">
+            <button type="button"> @Html.ActionLink("Order", "StartOrder", new { Model.StoreID }) </button> <br />
+            <button type="button"> <a asp-action="Index">Back to Store Listings</a></button>
+        </div>
+    </div>
+</body>

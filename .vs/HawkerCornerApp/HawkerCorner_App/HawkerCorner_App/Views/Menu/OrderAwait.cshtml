@@ -3,15 +3,48 @@
     ViewData["Title"] = "OrderAwait";
 }
 
-<h1>OrderAwait</h1>
+<style>
+    .bg {
+        position: absolute;
+        height: 93%;
+        width: 82%;
+        right: 0%;
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%
+    }
+
+    .front {
+        font-family: Montserrat;
+        color: black;
+    }
+</style>
+
+
+
+
 
 <head>
     <meta http-equiv="refresh" content="10;url=https://localhost:44339/menu" />
 </head>
 <body>
-    Thank you for your order!
-    Your Order will take a while as we are looking for a Deliverer for your order!
-    Do browse our catalog while waiting. Thank you for staying with Hawker Corner!
-    <br />
-    Redirecting in 10 seconds...
+    <img style="z-index:-5;" class="bg" src="/images/general bg.png">
+    <div class="front">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 style="text-align:center"><span style="background-color: #FFFF00">Thank you for your order!</span></h1>
+        <h3 style="text-align:center">
+            Your Order will take a while as we are looking for a Deliverer for your order!
+            Do browse our catalog while waiting. Thank you for staying with Hawker Corner!
+        </h3>
+        <br />
+        <h4 style="text-align:center">
+            Redirecting in 10 seconds...
+        </h4>
+    </div>
 </body>

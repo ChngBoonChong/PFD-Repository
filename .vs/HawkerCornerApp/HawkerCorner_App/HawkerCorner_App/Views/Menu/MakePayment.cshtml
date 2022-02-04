@@ -3,27 +3,28 @@
     ViewData["Title"] = "MakePayment";
 }
 
-<h1>MakePayment</h1>
+<h1><span style="background-color: #FFFF00">Payment</span></h1>
 
-Nett Total Amount: $@ViewBag.NettAmount
+<div>
+    <h3>Nett Total Amount: $@ViewBag.NettAmount</h3>
 
-HawkerCorner Cut: $@ViewBag.CutAmount
+    <h3>HawkerCorner Cut: $@ViewBag.CutAmount</h3>
 
-Total Amount Due: $@ViewBag.PriceAmount
-
+    <h3>Total Amount Due: $@ViewBag.PriceAmount</h3>
+</div>
 
 <form>
     <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
+    <input type="text" id="fname" name="fname" required><br>
 
     <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname"><br>
+    <input type="text" id="lname" name="lname" required><br>
 
     <label for="cnum">Credit Card Number:</label><br>
-    <input type="text" id="cnum" name="cnum"><br>
+    <input type="text" id="cnum" name="cnum" required><br>
 
     <label for="spin">Security PIN (3 Digits on Card Back):</label><br>
-    <input type="text" id="spin" name="spin"><br>
+    <input type="text" id="spin" name="spin" required><br>
 
     <input type="submit" value="Submit" asp-action="OrderAwait">
 </form>
