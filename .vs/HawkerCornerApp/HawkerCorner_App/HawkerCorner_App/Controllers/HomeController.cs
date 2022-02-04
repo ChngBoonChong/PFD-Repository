@@ -60,7 +60,7 @@ namespace HawkerCorner_App.Controllers
 
             if (userContext.ValidUserLogin(email, password) == true)
             {
-                string Role = "User";
+                string Role = Convert.ToString(userContext.GetUserRole(email));
                 HttpContext.Session.SetString("Role", Role);
                 string userID = Convert.ToString(userContext.GetUserID(email));
                 HttpContext.Session.SetString("LoginID", userID);

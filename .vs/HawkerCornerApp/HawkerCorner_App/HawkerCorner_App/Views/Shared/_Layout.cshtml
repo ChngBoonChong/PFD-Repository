@@ -25,11 +25,16 @@
             string userRole = Context.Session.GetString("Role");
             if (userRole != null)
             {
-                if (userRole == "User")
+                if (userRole == "Customer")
                 {
                     @await Html.PartialAsync("_UserBar.cshtml")
                 }
+                if (userRole == "Deliverer")
+                {
+                    @await Html.PartialAsync("_DeliverBar.cshtml")
+                }
             }
+            
             else
             {
                 @await Html.PartialAsync("_PublicBar.cshtml")

@@ -30,6 +30,12 @@ namespace HawkerCorner_App.Models
         [StringLength(50, ErrorMessage = "Email length cannot be more than 50 characters!")]
         public string EmailAddr { get; set; }
 
+        //Contact Number
+        [Required(ErrorMessage = "Contact Number Required!")]
+        [Display(Name = "Contact Number")]
+        [StringLength(8, MinimumLength = 8, ErrorMessage = "Please enter your 8-Digit contact number!")]
+        public string ContactNo { get; set; }
+
         //Password
         //Default value set
         [Required(ErrorMessage = "Password Required!")]
@@ -37,6 +43,10 @@ namespace HawkerCorner_App.Models
         [DataType(DataType.Password)]
         [StringLength(255, ErrorMessage = "Password must be at least 5 characters long!", MinimumLength = 5)]
         public string Password { get; set; }
+
+        [Required(ErrorMessage = "Role Required!")]
+        [Display(Name = "Role")]
+        public string Role { get; set; }
 
         //DateCreated
         public DateTime DateCreated { get; set; }

@@ -45,10 +45,10 @@ namespace HawkerCorner_App.DAL
                 {
                     UserID = reader.GetString(0), //0: 1st column
                     UserName = reader.GetString(1),
-                    Salutation = reader.GetString(2),
-                    EmailAddr = reader.GetString(3),
+                    EmailAddr = reader.GetString(2),
+                    ContactNo = reader.GetString(3),
                     Password = reader.GetString(4),
-                    DateCreated = reader.GetDateTime(5),
+                    Role = reader.GetString(5),
                 }
                 );
             }
@@ -176,10 +176,10 @@ namespace HawkerCorner_App.DAL
                 {
                     user.UserID = UserId;
                     user.UserName = !reader.IsDBNull(1) ? reader.GetString(1) : null;
-                    user.Salutation = !reader.IsDBNull(2) ? reader.GetString(2) : null;
-                    user.EmailAddr = !reader.IsDBNull(3) ? reader.GetString(3) : null;
+                    user.EmailAddr = !reader.IsDBNull(2) ? reader.GetString(2) : null;
+                    user.ContactNo = !reader.IsDBNull(3) ? reader.GetString(3) : null;
                     user.Password = !reader.IsDBNull(4) ? reader.GetString(4) : null;
-                    user.DateCreated = reader.GetDateTime(5);
+                    user.Role = !reader.IsDBNull(5) ? reader.GetString(5) : null;
                 }
             }
             reader.Close();
@@ -209,6 +209,30 @@ namespace HawkerCorner_App.DAL
             conn.Close();
 
             return userName;
+        }
+
+        public string GetUserRole(string email)
+        {
+            SqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = @"SELECT Status FROM Users WHERE Email = @email";
+
+            cmd.Parameters.AddWithValue("@email", email);
+
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            string userRole = "";
+            while (reader.Read())
+            {
+                userRole = reader.GetString(0);
+            }
+            //Close DataReader
+            reader.Close();
+            //Close the database connection
+            conn.Close();
+
+            return userRole;
         }
 
         public int Update(Users user)
