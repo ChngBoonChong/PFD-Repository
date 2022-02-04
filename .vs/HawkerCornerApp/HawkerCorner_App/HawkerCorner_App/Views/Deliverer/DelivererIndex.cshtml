@@ -3,78 +3,105 @@
 @{
     ViewData["Title"] = "DelivererIndex";
 }
-<br />
-<h1 style="text-align: center; "><span style="background-color: #FFFF00">Avaliable Delivery Requests</span></h1>
-<br />
-<table class="table">
-    <thead>
-        <tr>
-            <th style="width: 7%; text-align: center;">
-                @Html.DisplayNameFor(model => model.OrderID)
-            </th>
-            <th style="width: 7%; text-align: center;">
-                @Html.DisplayNameFor(model => model.UserID)
-            </th>
-            <th style="width: 10%; text-align: center;">
-                @Html.DisplayNameFor(model => model.DelivererID)
-            </th>
-            <th style="width: 7%; text-align: center;">
-                @Html.DisplayNameFor(model => model.StoreID)
-            </th>
-            <th style="width: 30%; text-align: left;">
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th style="width: 20%; text-align: left;">
-                @Html.DisplayNameFor(model => model.OrderList)
-            </th>
-            <th style="width: 15%; text-align: left;">
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th style="width: 15%; text-align: center;">
-                @Html.DisplayNameFor(model => model.OrderConfirm)
-            </th>
-            <th style="width: 15%; text-align: center;">
-                @Html.DisplayNameFor(model => model.OrderComplete)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DelivererID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StoreID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderList)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderConfirm)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderComplete)
-            </td>
-            <td>
-                @*@Html.ActionLink("Accept", "Accept", new { /* id=item.PrimaryKey */ })*@
-                <a asp-action="AcceptOrder" asp-controller="Deliverer"
-                   asp-route-orderId="@item.OrderID">Accept</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width = device-width,
+                                           initial-scale = 1" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <style>
+        body {
+            margin-bottom: 0;
+            background-image: url('/images/yellow background2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: absolute;
+            width: 100%;
+            right: 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <br />
+    <h1 style="text-align: center; "><span style="background-color: #FFFF00">Avaliable Delivery Requests</span></h1>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="width: 7%; text-align: center;">
+                    @Html.DisplayNameFor(model => model.OrderID)
+                </th>
+                <th style="width: 7%; text-align: center;">
+                    @Html.DisplayNameFor(model => model.UserID)
+                </th>
+                <th style="width: 10%; text-align: center;">
+                    @Html.DisplayNameFor(model => model.DelivererID)
+                </th>
+                <th style="width: 7%; text-align: center;">
+                    @Html.DisplayNameFor(model => model.StoreID)
+                </th>
+                <th style="width: 30%; text-align: left;">
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th style="width: 20%; text-align: left;">
+                    @Html.DisplayNameFor(model => model.OrderList)
+                </th>
+                <th style="width: 15%; text-align: left;">
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th style="width: 15%; text-align: center;">
+                    @Html.DisplayNameFor(model => model.OrderConfirm)
+                </th>
+                <th style="width: 15%; text-align: center;">
+                    @Html.DisplayNameFor(model => model.OrderComplete)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DelivererID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StoreID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderList)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderConfirm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderComplete)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Accept", "Accept", new { /* id=item.PrimaryKey */ })*@
+                        <a asp-action="AcceptOrder" asp-controller="Deliverer"
+                           asp-route-orderId="@item.OrderID">Accept</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
