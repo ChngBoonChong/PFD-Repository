@@ -181,5 +181,45 @@ namespace HawkerCorner_App.DAL
             //Close the database connection
             conn.Close();
         }
-    }
+
+        public FoodOrder getLastFoodOrder()
+        {
+            FoodOrder foodOrder = new FoodOrder();
+
+            // Retrieve the updated details of the specified order
+            //Create a SqlCommand object from connection object
+            SqlCommand cmd2 = conn.CreateCommand();
+
+            cmd2.CommandText = @"SELECT TOP 1 * FROM FoodOrder ORDER BY OrderID DESC";
+
+            //Open a database connection
+            conn.Open();
+            //Execute SELCT SQL through a DataReader
+            SqlDataReader reader = cmd2.ExecuteReader();
+            if (reader.HasRows)
+            {
+                //Read the record from database
+                while (reader.Read())
+                {
+                    // Fill staff object with values from the data reader.
+                    foodOrder.OrderID = reader.GetString(0);
+                    foodOrder.UserID = reader.GetString(1);
+                    foodOrder.DelivererID = !reader.IsDBNull(2) ? reader.GetString(2) : null;
+                    foodOrder.StoreID = reader.GetString(3);
+                    foodOrder.Address = reader.GetString(4);
+                    foodOrder.OrderList = reader.GetString(5);
+                    foodOrder.Date = reader.GetDateTime(6);
+                    foodOrder.OrderConfirm = reader.GetString(7);
+                    foodOrder.OrderComplete = reader.GetString(8);
+                }
+                
+            }
+            //Close data reader
+            reader.Close();
+            //Close database connection
+            conn.Close();
+
+            return foodOrder;
+        }
+}
 }

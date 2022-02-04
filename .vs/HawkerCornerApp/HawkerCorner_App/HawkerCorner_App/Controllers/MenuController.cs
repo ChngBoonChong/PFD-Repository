@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using HawkerCorner_App.DAL;
 using HawkerCorner_App.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace HawkerCorner_App.Controllers
 {
@@ -53,8 +54,9 @@ namespace HawkerCorner_App.Controllers
         }
 
         //Order Start
-        public ActionResult StartOrder()
+        public ActionResult StartOrder(string storeID)
         {
+            HttpContext.Session.SetString("SelectedStore", storeID);
             return View("OrderForm");
         }
 
@@ -63,11 +65,18 @@ namespace HawkerCorner_App.Controllers
         {
             FoodOrder fo = new FoodOrder();
 
+            // Generate the latest unique primary key for OrderID
+            FoodOrder input = foodOrderContext.getLastFoodOrder();
+            var lastThreeDigit = input.OrderID.Substring(input.OrderID.Length - 3);
+            var generateUniqueOrderID = Int32.Parse(lastThreeDigit) + 1;
+            var uniqueOrderID = "O" + generateUniqueOrderID.ToString("D3");
+
+
             //Do something with formData
-            fo.OrderID = "O001";  // !!!! CANNOT HARDCODE
-            fo.UserID = "U001";   // !!!! CANNOT HARDCODE
+            fo.OrderID = Convert.ToString(uniqueOrderID);  // !!!! CANNOT HARDCODE
+            fo.UserID = "U001";//HttpContext.Session.GetString("LoginID");
             fo.DelivererID = null;
-            fo.StoreID = "S001";   // !!!! CANNOT HARDCODE
+            fo.StoreID = HttpContext.Session.GetString("SelectedStore");   // !!!! CANNOT HARDCODE
             fo.Address = formData.Address;
             fo.OrderList = formData.OrderList;
             fo.Date = DateTime.Now;
@@ -76,6 +85,9 @@ namespace HawkerCorner_App.Controllers
 
             //Run DAL to add
             foodOrderContext.AddFoodOrder(fo);
+
+       
+
 
             return View(); // Go to payment screen(?)
         }

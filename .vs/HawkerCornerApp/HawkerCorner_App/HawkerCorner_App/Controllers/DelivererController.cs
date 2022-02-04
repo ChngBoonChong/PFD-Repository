@@ -27,7 +27,7 @@ namespace HawkerCorner_App.Controllers
         public ActionResult AcceptOrder(string orderID)
         {
             // FOR NOW, DELETE THIS ONE LINE OF CODE
-            HttpContext.Session.SetString("LoginID", "U001");
+            //HttpContext.Session.SetString("LoginID", "U001");
 
             // Run DAL to change status
             FoodOrder foodOrder = foodOrderContext.ChangeFoodOrderStatus(orderID, (string)HttpContext.Session.GetString("LoginID"));
@@ -40,7 +40,7 @@ namespace HawkerCorner_App.Controllers
         public ActionResult CompleteOrder(string orderID)
         {
             // FOR NOW, DELETE THIS ONE LINE OF CODE
-            HttpContext.Session.SetString("LoginID", "U001");
+            //HttpContext.Session.SetString("LoginID", "U001");
             //string testOrderID = "O004";
 
             // Run DAL to change status
