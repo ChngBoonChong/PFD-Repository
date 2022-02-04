@@ -3,32 +3,56 @@
     ViewData["Title"] = "MakePayment";
 }
 
-<h1><span style="background-color: #FFFF00">Payment</span></h1>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width = device-width,
+                                           initial-scale = 1" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <style>
+        body {
+            margin-bottom: 0;
+            background-image: url('/images/yellow background2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: absolute;
+            width: 100%;
+            right: 0%;
+        }
+    </style>
+</head>
 
-<div>
-    <h3>Nett Total Amount: $@ViewBag.NettAmount</h3>
+<body>
+    <<br />
+    <h1><span style="background-color: #FFFF00">Payment</span></h1>
 
-    <h3>HawkerCorner Cut: $@ViewBag.CutAmount</h3>
+    <div>
+        <h3>Nett Total Amount: $@ViewBag.NettAmount</h3>
 
-    <h3>Total Amount Due: $@ViewBag.PriceAmount</h3>
-</div>
+        <h3>HawkerCorner Cut: $@ViewBag.CutAmount</h3>
 
-<form>
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" required><br>
+        <h3>Total Amount Due: $@ViewBag.PriceAmount</h3>
+    </div>
 
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" required><br>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" required><br>
 
-    <label for="cnum">Credit Card Number:</label><br>
-    <input type="text" id="cnum" name="cnum" required><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" required><br>
 
-    <label for="spin">Security PIN (3 Digits on Card Back):</label><br>
-    <input type="text" id="spin" name="spin" required><br>
+        <label for="cnum">Credit Card Number:</label><br>
+        <input type="text" id="cnum" name="cnum" required><br>
 
-    <input type="submit" value="Submit" asp-action="OrderAwait">
-</form>
+        <label for="spin">Security PIN (3 Digits on Card Back):</label><br>
+        <input type="text" id="spin" name="spin" required><br>
 
-<br>
+        <input type="submit" value="Submit" asp-action="OrderAwait">
+    </form>
 
-<img src="~/images/qr code example.png" style="width:300px" />
+    <br>
+
+    <img src="~/images/qr code example.png" style="width:300px" />
+</body>
